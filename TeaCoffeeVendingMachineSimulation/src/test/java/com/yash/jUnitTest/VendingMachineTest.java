@@ -5,13 +5,13 @@ import static org.junit.Assert.assertTrue;
 
 import java.util.List;
 
-import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
+import org.mockito.Mock;
 import org.mockito.runners.MockitoJUnitRunner;
 
 import com.yash.controller.VendingMachineFactory;
@@ -23,15 +23,16 @@ import com.yash.exceptions.NotSufficientChangeException;
 import com.yash.exceptions.SoldOutException;
 import com.yash.service.VendingMachineService;
 import com.yash.util.Container;
+import com.yash.util.Inventory;
 
 @RunWith(MockitoJUnitRunner.class)
 public class VendingMachineTest {
-
-	private static VendingMachineService vendingMachineService;
-
 	@InjectMocks
-	private VendingMachineDaoImpl vendingMachineDaoImpl;
-
+	VendingMachineDaoImpl vendingMachineDaoImpl;
+	@Mock
+	private Inventory<Coin> cashInventory;
+	@Mock
+	private Inventory<Item> itemInventory;
 	@Rule
 	public ExpectedException exception = ExpectedException.none();
 
@@ -40,21 +41,18 @@ public class VendingMachineTest {
 		vendingMachineService = VendingMachineFactory.createVendingMachine();
 	}
 
-	@AfterClass
-	public static void tearDown() {
-		vendingMachineService = null;
-	}
-
 	@Test
 	public void shouldBuyItemWithExactPrice() {
+
 		long price = vendingMachineService.selectItemAndGetPrice(Item.COFFEE);
-		assertEquals(Item.COFFEE.getPrice(), price);
 		vendingMachineService.insertCoin(Coin.TEN);
 		vendingMachineService.insertCoin(Coin.TEN);
 
 		Container<Item, List<Coin>> bucket = vendingMachineService.collectItemAndChange();
 		Item item = bucket.getFirst();
 		List<Coin> change = bucket.getSecond();
+
+		assertEquals(Item.COFFEE.getPrice(), price);
 		assertEquals(Item.COFFEE, item);
 		assertEquals(Coin.FIVE, change.get(0));
 		assertTrue(!change.isEmpty());
@@ -63,7 +61,6 @@ public class VendingMachineTest {
 	@Test
 	public void shouldBuyItemWithMorePrice() {
 		long price = vendingMachineService.selectItemAndGetPrice(Item.TEA);
-		assertEquals(Item.TEA.getPrice(), price);
 		vendingMachineService.insertCoin(Coin.FIVE);
 		vendingMachineService.insertCoin(Coin.TEN);
 
@@ -72,6 +69,7 @@ public class VendingMachineTest {
 		List<Coin> change = bucket.getSecond();
 		assertEquals(Item.TEA, item);
 		assertTrue(!change.isEmpty());
+		assertEquals(Item.TEA.getPrice(), price);
 		// assertEquals(15 - Item.TEA.getPrice(), getTotal(change));
 
 	}
@@ -79,11 +77,11 @@ public class VendingMachineTest {
 	@Test
 	public void shouldMoneyRefund() {
 		long price = vendingMachineService.selectItemAndGetPrice(Item.BLACKCOFFEE);
-		assertEquals(Item.BLACKCOFFEE.getPrice(), price);
 		vendingMachineService.insertCoin(Coin.TEN);
 		vendingMachineService.insertCoin(Coin.FIVE);
 		vendingMachineService.insertCoin(Coin.TWO);
 		vendingMachineService.insertCoin(Coin.ONE);
+		assertEquals(Item.BLACKCOFFEE.getPrice(), price);
 
 		assertEquals(18, getTotal(vendingMachineService.refund()));
 	}
@@ -130,9 +128,33 @@ public class VendingMachineTest {
 		VendingMachineService vendingMachineachine = VendingMachineFactory.createVendingMachine();
 		vendingMachineachine.reset();
 
-		vendingMachineachine.selectItemAndGetPrice(Item.COFFEE);
+		vendingMachineService.selectItemAndGetPrice(Item.COFFEE);
 
 	}
+
+	@Test
+	public void shouldReturnPrintStatusOfCotainerAndSale() {
+
+		vendingMachineService.printStats();
+	}
+
+	@Test
+	public void shouldReturnTotalSale() {
+		cashInventory.add(Coin.FIVE);
+		vendingMachineDaoImpl.getTotalSales();
+	}
+
+	@Test
+	public void shouldHandleNotSufficientChangeWhenDeductMoney() {
+		exception.expect(NotSufficientChangeException.class);
+		vendingMachineDaoImpl.selectItemAndGetPrice(Item.COFFEE);
+		vendingMachineDaoImpl.insertCoin(Coin.TEN);
+		vendingMachineDaoImpl.insertCoin(Coin.TEN);
+		cashInventory.deduct(Coin.TEN);
+		vendingMachineDaoImpl.collectItemAndChange();
+	}
+
+	private static VendingMachineService vendingMachineService;
 
 	private long getTotal(List<Coin> change) {
 		long total = 0;

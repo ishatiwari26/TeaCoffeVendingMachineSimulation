@@ -8,7 +8,8 @@ public class NotSufficientChangeExcpetionTest {
 
 	@Test
 	public void shouldReturnNotSuffiecientChange() {
-		NotSufficientChangeException obj = new NotSufficientChangeException("NotSufficientChangeException");
-		obj.getMessage();
+		NotSufficientChangeException noSuffiecientChange = new NotSufficientChangeException(
+				"NotSufficientChangeException");
+		noSuffiecientChange.getMessage();
 	}
 }

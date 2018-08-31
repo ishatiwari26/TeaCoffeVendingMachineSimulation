@@ -1,10 +1,10 @@
 package com.yash.exceptions;
 
-public class SoldOutException extends RuntimeException {
+public class WrongInputException extends RuntimeException {
 	private static final long serialVersionUID = 1L;
 	private String message;
 
-	public SoldOutException(String string) {
+	public WrongInputException(String string) {
 		this.message = string;
 	}
 
@@ -12,5 +12,4 @@ public class SoldOutException extends RuntimeException {
 	public String getMessage() {
 		return message;
 	}
-
 }

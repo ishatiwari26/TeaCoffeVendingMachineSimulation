@@ -1,7 +1,6 @@
 package com.yash.daoImpl;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 import com.yash.dao.VendingMachineDao;
@@ -100,7 +99,7 @@ public class VendingMachineDaoImpl implements VendingMachineDao {
 
 	private List<Coin> getChange(long amount) throws NotSufficientChangeException {
 
-		List<Coin> changes = Collections.EMPTY_LIST;
+		List<Coin> changes = new ArrayList<Coin>();
 
 		if (amount > 0) {
 			changes = new ArrayList<Coin>();

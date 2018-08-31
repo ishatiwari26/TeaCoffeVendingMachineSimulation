@@ -1,21 +1,23 @@
 package com.yash.exceptions;
 
 public class NotFullPaidException extends RuntimeException {
-    private String message;
-    private long remaining;
+	private static final long serialVersionUID = 1L;
 
-    public NotFullPaidException(String message, long remaining) {
-        this.message = message;
-        this.remaining = remaining;
-    }
+	private String message;
+	private long remaining;
 
-    public long getRemaining() {
-        return remaining;
-    }
+	public NotFullPaidException(String message, long remaining) {
+		this.message = message;
+		this.remaining = remaining;
+	}
 
-    @Override
-    public String getMessage() {
-        return message + remaining;
-    }
+	public long getRemaining() {
+		return remaining;
+	}
+
+	@Override
+	public String getMessage() {
+		return message + remaining;
+	}
 
 }
