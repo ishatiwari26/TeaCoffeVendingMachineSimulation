@@ -1,0 +1,332 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class-diagram version="1.2.2" icons="true" always-add-relationships="false" generalizations="true" realizations="true" 
+  associations="true" dependencies="false" nesting-relationships="true" router="FAN">  
+  <class id="1" language="java" name="com.yash.actions.ValidateCustomerRequest" 
+    project="TeaCoffeeVendingMachineSimulation" 
+    file="/TeaCoffeeVendingMachineSimulation/src/main/java/com/yash/actions/ValidateCustomerRequest.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="171" width="247" x="879" y="441"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="2" language="java" name="com.yash.actions.ValidateUserAction" project="TeaCoffeeVendingMachineSimulation" 
+    file="/TeaCoffeeVendingMachineSimulation/src/main/java/com/yash/actions/ValidateUserAction.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="135" width="132" x="500" y="441"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="3" language="java" name="com.yash.actions.ValidateOperatorRequest" 
+    project="TeaCoffeeVendingMachineSimulation" 
+    file="/TeaCoffeeVendingMachineSimulation/src/main/java/com/yash/actions/ValidateOperatorRequest.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="135" width="167" x="672" y="441"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="4" language="java" name="com.yash.controller.VendingMachineFactory" 
+    project="TeaCoffeeVendingMachineSimulation" 
+    file="/TeaCoffeeVendingMachineSimulation/src/main/java/com/yash/controller/VendingMachineFactory.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="99" width="263" x="1383" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="5" language="java" name="com.yash.controller.ProductRequest" project="TeaCoffeeVendingMachineSimulation" 
+    file="/TeaCoffeeVendingMachineSimulation/src/main/java/com/yash/controller/ProductRequest.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="99" width="116" x="672" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="6" language="java" name="com.yash.controller.UserResuestController" 
+    project="TeaCoffeeVendingMachineSimulation" 
+    file="/TeaCoffeeVendingMachineSimulation/src/main/java/com/yash/controller/UserResuestController.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="135" width="226" x="672" y="266"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <interface id="7" language="java" name="com.yash.dao.VendingMachineDao" project="TeaCoffeeVendingMachineSimulation" 
+    file="/TeaCoffeeVendingMachineSimulation/src/main/java/com/yash/dao/VendingMachineDao.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="207" width="274" x="1193" y="868"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <class id="8" language="java" name="com.yash.daoImpl.VendingMachineDaoImpl" 
+    project="TeaCoffeeVendingMachineSimulation" 
+    file="/TeaCoffeeVendingMachineSimulation/src/main/java/com/yash/daoImpl/VendingMachineDaoImpl.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="387" width="274" x="1511" y="441"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <enumeration id="9" language="java" name="com.yash.enums.Item" project="TeaCoffeeVendingMachineSimulation" 
+    file="/TeaCoffeeVendingMachineSimulation/src/main/java/com/yash/enums/Item.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="225" width="125" x="1507" y="868"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </enumeration>  
+  <enumeration id="10" language="java" name="com.yash.enums.Coin" project="TeaCoffeeVendingMachineSimulation" 
+    file="/TeaCoffeeVendingMachineSimulation/src/main/java/com/yash/enums/Coin.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="189" width="119" x="513" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </enumeration>  
+  <class id="11" language="java" name="com.yash.exceptions.NotSufficientChangeException" 
+    project="TeaCoffeeVendingMachineSimulation" 
+    file="/TeaCoffeeVendingMachineSimulation/src/main/java/com/yash/exceptions/NotSufficientChangeException.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="135" width="208" x="265" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="12" language="java" name="com.yash.exceptions.WrongInputException" 
+    project="TeaCoffeeVendingMachineSimulation" 
+    file="/TeaCoffeeVendingMachineSimulation/src/main/java/com/yash/exceptions/WrongInputException.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="135" width="164" x="992" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="13" language="java" name="com.yash.exceptions.SoldOutException" project="TeaCoffeeVendingMachineSimulation" 
+    file="/TeaCoffeeVendingMachineSimulation/src/main/java/com/yash/exceptions/SoldOutException.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="135" width="147" x="1196" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="14" language="java" name="com.yash.exceptions.NotFullPaidException" 
+    project="TeaCoffeeVendingMachineSimulation" 
+    file="/TeaCoffeeVendingMachineSimulation/src/main/java/com/yash/exceptions/NotFullPaidException.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="171" width="184" x="41" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="15" language="java" name="com.yash.model.User" project="TeaCoffeeVendingMachineSimulation" 
+    file="/TeaCoffeeVendingMachineSimulation/src/main/java/com/yash/model/User.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="117" width="201" x="1686" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <interface id="16" language="java" name="com.yash.service.VendingMachineService" 
+    project="TeaCoffeeVendingMachineSimulation" 
+    file="/TeaCoffeeVendingMachineSimulation/src/main/java/com/yash/service/VendingMachineService.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="207" width="274" x="879" y="868"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <class id="17" language="java" name="com.yash.serviceImpl.VendingMachineServiceImpl" 
+    project="TeaCoffeeVendingMachineSimulation" 
+    file="/TeaCoffeeVendingMachineSimulation/src/main/java/com/yash/serviceImpl/VendingMachineServiceImpl.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="225" width="274" x="1166" y="441"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="18" language="java" name="com.yash.util.Container" project="TeaCoffeeVendingMachineSimulation" 
+    file="/TeaCoffeeVendingMachineSimulation/src/main/java/com/yash/util/Container.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="153" width="124" x="828" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="19" language="java" name="com.yash.util.Inventory" project="TeaCoffeeVendingMachineSimulation" 
+    file="/TeaCoffeeVendingMachineSimulation/src/main/java/com/yash/util/Inventory.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="207" width="150" x="1672" y="868"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="20" language="java" name="com.yash.util.UserInputScanner" project="TeaCoffeeVendingMachineSimulation" 
+    file="/TeaCoffeeVendingMachineSimulation/src/main/java/com/yash/util/UserInputScanner.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="117" width="159" x="672" y="868"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <association id="21">    
+    <end type="SOURCE" refId="5" navigable="false">      
+      <attribute id="22" name="requestProcessor"/>      
+      <multiplicity id="23" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="6" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="24">    
+    <end type="SOURCE" refId="3" navigable="false">      
+      <attribute id="25" name="input"/>      
+      <multiplicity id="26" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="20" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="27">    
+    <end type="SOURCE" refId="8" navigable="false">      
+      <attribute id="28" name="cashInventory"/>      
+      <multiplicity id="29" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="19" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <realization id="30">    
+    <end type="SOURCE" refId="17"/>    
+    <end type="TARGET" refId="16"/>  
+  </realization>  
+  <association id="31">    
+    <end type="SOURCE" refId="1" navigable="false">      
+      <attribute id="32" name="vendingMachineService"/>      
+      <multiplicity id="33" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="16" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="34">    
+    <end type="SOURCE" refId="2" navigable="false">      
+      <attribute id="35" name="input"/>      
+      <multiplicity id="36" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="20" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <realization id="37">    
+    <end type="SOURCE" refId="8"/>    
+    <end type="TARGET" refId="7"/>  
+  </realization>  
+  <association id="38">    
+    <end type="SOURCE" refId="8" navigable="false">      
+      <attribute id="39" name="itemInventory"/>      
+      <multiplicity id="40" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="19" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="41">    
+    <end type="SOURCE" refId="6" navigable="false">      
+      <attribute id="42" name="validateCustomerRequest"/>      
+      <multiplicity id="43" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="1" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="44">    
+    <end type="SOURCE" refId="6" navigable="false">      
+      <attribute id="45" name="userAction"/>      
+      <multiplicity id="46" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="2" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="47">    
+    <end type="SOURCE" refId="1" navigable="false">      
+      <attribute id="48" name="input"/>      
+      <multiplicity id="49" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="20" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="50">    
+    <end type="SOURCE" refId="17" navigable="false">      
+      <attribute id="51" name="vendingMachineDao"/>      
+      <multiplicity id="52" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="7" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="53">    
+    <end type="SOURCE" refId="8" navigable="false">      
+      <attribute id="54" name="currentItem"/>      
+      <multiplicity id="55" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="9" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="56">    
+    <end type="SOURCE" refId="3" navigable="false">      
+      <attribute id="57" name="vendingMachineService"/>      
+      <multiplicity id="58" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="16" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="59">    
+    <end type="SOURCE" refId="6" navigable="false">      
+      <attribute id="60" name="validateOperatorRequest"/>      
+      <multiplicity id="61" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="3" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+    sort-features="false" accessors="true" visibility="true">    
+    <attributes public="true" package="true" protected="true" private="true" static="true"/>    
+    <operations public="true" package="true" protected="true" private="true" static="true"/>  
+  </classifier-display>  
+  <association-display labels="true" multiplicity="true"/>
+</class-diagram>
