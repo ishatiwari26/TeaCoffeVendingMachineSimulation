@@ -105,22 +105,22 @@ public class VendingMachineDaoImpl implements VendingMachineDao {
 			changes = new ArrayList<Coin>();
 			long balance = amount;
 			while (balance > 0) {
-				if (balance >= Coin.TEN.getAmount() && cashInventory.hasItem(Coin.TEN)) {
+				if (checkBalanceAmount(balance, Coin.TEN) && cashInventory.hasItem(Coin.TEN)) {
 					changes.add(Coin.TEN);
 					balance = balance - Coin.TEN.getAmount();
 					continue;
 
-				} else if (balance >= Coin.FIVE.getAmount() && cashInventory.hasItem(Coin.FIVE)) {
+				} else if (checkBalanceAmount(balance, Coin.FIVE) && cashInventory.hasItem(Coin.FIVE)) {
 					changes.add(Coin.FIVE);
 					balance = balance - Coin.FIVE.getAmount();
 					continue;
 
-				} else if (balance >= Coin.TWO.getAmount() && cashInventory.hasItem(Coin.TWO)) {
+				} else if (checkBalanceAmount(balance, Coin.TWO) && cashInventory.hasItem(Coin.TWO)) {
 					changes.add(Coin.TWO);
 					balance = balance - Coin.TWO.getAmount();
 					continue;
 
-				} else if (balance >= Coin.ONE.getAmount() && cashInventory.hasItem(Coin.ONE)) {
+				} else if (checkBalanceAmount(balance, Coin.ONE) && cashInventory.hasItem(Coin.ONE)) {
 					changes.add(Coin.ONE);
 					balance = balance - Coin.ONE.getAmount();
 					continue;
@@ -132,6 +132,10 @@ public class VendingMachineDaoImpl implements VendingMachineDao {
 		}
 
 		return changes;
+	}
+
+	private boolean checkBalanceAmount(long balance, Coin coin) {
+		return balance >= coin.getAmount();
 	}
 
 	@Override

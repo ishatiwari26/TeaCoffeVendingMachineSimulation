@@ -1,7 +1,6 @@
 package com.yash.jUnitTest;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
 
 import java.util.List;
 
@@ -31,8 +30,6 @@ public class VendingMachineTest {
 	VendingMachineDaoImpl vendingMachineDaoImpl;
 	@Mock
 	private Inventory<Coin> cashInventory;
-	@Mock
-	private Inventory<Item> itemInventory;
 	@Rule
 	public ExpectedException exception = ExpectedException.none();
 
@@ -55,7 +52,6 @@ public class VendingMachineTest {
 		assertEquals(Item.COFFEE.getPrice(), price);
 		assertEquals(Item.COFFEE, item);
 		assertEquals(Coin.FIVE, change.get(0));
-		assertTrue(!change.isEmpty());
 	}
 
 	@Test
@@ -66,11 +62,8 @@ public class VendingMachineTest {
 
 		Container<Item, List<Coin>> bucket = vendingMachineService.collectItemAndChange();
 		Item item = bucket.getFirst();
-		List<Coin> change = bucket.getSecond();
 		assertEquals(Item.TEA, item);
-		assertTrue(!change.isEmpty());
 		assertEquals(Item.TEA.getPrice(), price);
-		// assertEquals(15 - Item.TEA.getPrice(), getTotal(change));
 
 	}
 
@@ -104,6 +97,7 @@ public class VendingMachineTest {
 		vendingMachineService.selectItemAndGetPrice(Item.COFFEE);
 		vendingMachineService.insertCoin(Coin.FIVE);
 		vendingMachineService.collectItemAndChange();
+
 	}
 
 	@Test

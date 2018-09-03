@@ -110,6 +110,19 @@ public class ValidateCustomerRequestTest {
 	}
 
 	@Test
+	public void shouldHandLessMoneyWhenOrderCoffeeWithLessAmount() {
+		when(userInputScanner.getIntValue()).thenReturn(4).thenReturn(4);
+		vendingMachineServiceImpl.selectItemAndGetPrice(Item.COFFEE);
+		vendingMachineServiceImpl.insertCoin(Coin.TEN);
+		List<Coin> coins = new ArrayList<Coin>();
+		Container<Item, List<Coin>> bucket = new Container<Item, List<Coin>>(Item.COFFEE, coins);
+		when(vendingMachineServiceImpl.collectItemAndChange()).thenReturn(bucket);
+		customerOrders = validateCustomerRequest.customerRequests();
+		assertNotNull(customerOrders);
+
+	}
+
+	@Test
 	public void shouldGiveMessageWhenHaveWrongOrder() {
 		when(userInputScanner.getIntValue()).thenReturn(5);
 		validateCustomerRequest.customerRequests();
