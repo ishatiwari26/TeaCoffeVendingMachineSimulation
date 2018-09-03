@@ -95,12 +95,12 @@ public class VendingMachineTest {
 			vendingMachineService.insertCoin(Coin.FIVE);
 			vendingMachineService.collectItemAndChange();
 		}
-
 	}
 
 	@Test
 	public void whenPayLessThenThrowNotFullPaid() {
 		exception.expect(NotFullPaidException.class);
+		exception.expectMessage("Price not full paid, remaining : 10");
 		vendingMachineService.selectItemAndGetPrice(Item.COFFEE);
 		vendingMachineService.insertCoin(Coin.FIVE);
 		vendingMachineService.collectItemAndChange();
@@ -118,7 +118,6 @@ public class VendingMachineTest {
 			vendingMachineService.selectItemAndGetPrice(Item.BLACKTEA);
 			vendingMachineService.insertCoin(Coin.TEN);
 			vendingMachineService.collectItemAndChange();
-
 		}
 	}
 
@@ -127,9 +126,7 @@ public class VendingMachineTest {
 		exception.expect(SoldOutException.class);
 		VendingMachineService vendingMachineachine = VendingMachineFactory.createVendingMachine();
 		vendingMachineachine.reset();
-
 		vendingMachineService.selectItemAndGetPrice(Item.COFFEE);
-
 	}
 
 	@Test
