@@ -97,7 +97,14 @@ public class VendingMachineTest {
 		vendingMachineService.selectItemAndGetPrice(Item.COFFEE);
 		vendingMachineService.insertCoin(Coin.FIVE);
 		vendingMachineService.collectItemAndChange();
+	}
 
+	@Test
+	public void shouldThrowExceptionSoldOutWhenResetContainer() {
+		exception.expect(SoldOutException.class);
+		VendingMachineService vendingMachineachine = VendingMachineFactory.createVendingMachine();
+		vendingMachineachine.reset();
+		vendingMachineService.selectItemAndGetPrice(Item.COFFEE);
 	}
 
 	@Test
@@ -113,14 +120,6 @@ public class VendingMachineTest {
 			vendingMachineService.insertCoin(Coin.TEN);
 			vendingMachineService.collectItemAndChange();
 		}
-	}
-
-	@Test
-	public void shouldThrowExceptionSoldOutWhenResetContainer() {
-		exception.expect(SoldOutException.class);
-		VendingMachineService vendingMachineachine = VendingMachineFactory.createVendingMachine();
-		vendingMachineachine.reset();
-		vendingMachineService.selectItemAndGetPrice(Item.COFFEE);
 	}
 
 	@Test
