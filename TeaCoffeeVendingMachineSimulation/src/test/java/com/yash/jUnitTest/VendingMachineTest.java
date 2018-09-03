@@ -40,15 +40,15 @@ public class VendingMachineTest {
 
 	@Test
 	public void shouldBuyItemWithExactPrice() {
-
+		// given
 		long price = vendingMachineService.selectItemAndGetPrice(Item.COFFEE);
 		vendingMachineService.insertCoin(Coin.TEN);
 		vendingMachineService.insertCoin(Coin.TEN);
-
+		// when
 		Container<Item, List<Coin>> bucket = vendingMachineService.collectItemAndChange();
 		Item item = bucket.getFirst();
 		List<Coin> change = bucket.getSecond();
-
+		// then
 		assertEquals(Item.COFFEE.getPrice(), price);
 		assertEquals(Item.COFFEE, item);
 		assertEquals(Coin.FIVE, change.get(0));
