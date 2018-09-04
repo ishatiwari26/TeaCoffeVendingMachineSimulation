@@ -71,7 +71,7 @@ public class VendingMachineDaoTest {
 	}
 
 	@Test
-	public void shouldMoneyRefund() {
+	public void shouldMoneyRefundWhenInsertMoreCoins() {
 		long price = vendingMachineService.selectItemAndGetPrice(Item.BLACKCOFFEE);
 		vendingMachineService.insertCoin(Coin.TEN);
 		vendingMachineService.insertCoin(Coin.FIVE);
@@ -83,7 +83,7 @@ public class VendingMachineDaoTest {
 	}
 
 	@Test
-	public void whenBuyMoreItemsWhichNotInStockThenReturnSoldOut() {
+	public void shouldReturnSoldOutWhenBuyMoreItemsWhichNotInStock() {
 		exception.expect(SoldOutException.class);
 
 		for (int i = 0; i < 10; i++) {
@@ -96,7 +96,7 @@ public class VendingMachineDaoTest {
 	}
 
 	@Test
-	public void whenPayLessThenThrowNotFullPaid() {
+	public void shouldThrowNotFullPaidWhenPayLess() {
 		exception.expect(NotFullPaidException.class);
 		exception.expectMessage("Price not full paid, remaining : 10");
 		vendingMachineDaoImpl.selectItemAndGetPrice(Item.COFFEE);
@@ -113,7 +113,7 @@ public class VendingMachineDaoTest {
 	}
 
 	@Test
-	public void whenPayLessThenNotSufficientChangeException() {
+	public void shouldThrowNotSufficientChangeWhenPayLess() {
 		exception.expect(NotSufficientChangeException.class);
 		for (int i = 0; i < 5; i++) {
 			vendingMachineDaoImpl.selectItemAndGetPrice(Item.COFFEE);
@@ -132,7 +132,7 @@ public class VendingMachineDaoTest {
 	}
 
 	@Test
-	public void shouldReturnTotalSale() {
+	public void shouldReturnTotalSales() {
 		cashInventory.add(Coin.FIVE);
 		vendingMachineDaoImpl.getTotalSales();
 	}
