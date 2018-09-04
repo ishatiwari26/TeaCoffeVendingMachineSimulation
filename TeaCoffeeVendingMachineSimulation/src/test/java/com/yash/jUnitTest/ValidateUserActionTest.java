@@ -41,7 +41,6 @@ public class ValidateUserActionTest {
 
 	@Test
 	public void shouldExitFromMenuWhenInputIsZero() {
-		// exception.expect(WrongInputException.class);
 		when(userInputScanner.getIntValue()).thenReturn(0);
 		validateUserAction.validateUser();
 	}

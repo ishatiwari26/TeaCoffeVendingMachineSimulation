@@ -67,7 +67,7 @@ public class ValidateCustomerRequest {
 			List<Coin> change = bucket.getSecond();
 			master_map.put(item.getName(), change.isEmpty() ? 0 : change.get(0).getAmount());
 		} catch (Exception e) {
-			e.printStackTrace();
+			master_map.clear();
 		}
 		return master_map;
 

@@ -1,6 +1,7 @@
 package com.yash.jUnitTest;
 
 import static org.junit.Assert.assertEquals;
+import static org.mockito.Mockito.when;
 
 import java.util.List;
 
@@ -25,11 +26,13 @@ import com.yash.util.Container;
 import com.yash.util.Inventory;
 
 @RunWith(MockitoJUnitRunner.class)
-public class VendingMachineTest {
+public class VendingMachineDaoTest {
 	@InjectMocks
-	VendingMachineDaoImpl vendingMachineDaoImpl;
+	private VendingMachineDaoImpl vendingMachineDaoImpl;
 	@Mock
-	private Inventory<Coin> cashInventory;
+	private static Inventory<Coin> cashInventory;
+	@Mock
+	private static Inventory<Item> itemInventory;
 	@Rule
 	public ExpectedException exception = ExpectedException.none();
 
@@ -40,15 +43,15 @@ public class VendingMachineTest {
 
 	@Test
 	public void shouldBuyItemWithExactPrice() {
-		// given
+
 		long price = vendingMachineService.selectItemAndGetPrice(Item.COFFEE);
 		vendingMachineService.insertCoin(Coin.TEN);
 		vendingMachineService.insertCoin(Coin.TEN);
-		// when
+
 		Container<Item, List<Coin>> bucket = vendingMachineService.collectItemAndChange();
 		Item item = bucket.getFirst();
 		List<Coin> change = bucket.getSecond();
-		// then
+
 		assertEquals(Item.COFFEE.getPrice(), price);
 		assertEquals(Item.COFFEE, item);
 		assertEquals(Coin.FIVE, change.get(0));
@@ -82,43 +85,43 @@ public class VendingMachineTest {
 	@Test
 	public void whenBuyMoreItemsWhichNotInStockThenReturnSoldOut() {
 		exception.expect(SoldOutException.class);
+
 		for (int i = 0; i < 10; i++) {
-			vendingMachineService.selectItemAndGetPrice(Item.COFFEE);
-			vendingMachineService.insertCoin(Coin.TEN);
-			vendingMachineService.insertCoin(Coin.FIVE);
-			vendingMachineService.collectItemAndChange();
+			vendingMachineDaoImpl.selectItemAndGetPrice(Item.COFFEE);
+			vendingMachineDaoImpl.insertCoin(Coin.TEN);
+			vendingMachineDaoImpl.insertCoin(Coin.FIVE);
+			vendingMachineDaoImpl.collectItemAndChange();
 		}
+
 	}
 
 	@Test
 	public void whenPayLessThenThrowNotFullPaid() {
 		exception.expect(NotFullPaidException.class);
 		exception.expectMessage("Price not full paid, remaining : 10");
-		vendingMachineService.selectItemAndGetPrice(Item.COFFEE);
-		vendingMachineService.insertCoin(Coin.FIVE);
-		vendingMachineService.collectItemAndChange();
+		vendingMachineDaoImpl.selectItemAndGetPrice(Item.COFFEE);
+		vendingMachineDaoImpl.insertCoin(Coin.FIVE);
+		vendingMachineDaoImpl.collectItemAndChange();
+
 	}
 
 	@Test
 	public void shouldThrowExceptionSoldOutWhenResetContainer() {
 		exception.expect(SoldOutException.class);
-		VendingMachineService vendingMachineachine = VendingMachineFactory.createVendingMachine();
-		vendingMachineachine.reset();
-		vendingMachineService.selectItemAndGetPrice(Item.COFFEE);
+		vendingMachineDaoImpl.reset();
+		vendingMachineDaoImpl.selectItemAndGetPrice(Item.COFFEE);
 	}
 
 	@Test
 	public void whenPayLessThenNotSufficientChangeException() {
 		exception.expect(NotSufficientChangeException.class);
 		for (int i = 0; i < 5; i++) {
-			vendingMachineService.selectItemAndGetPrice(Item.COFFEE);
-			vendingMachineService.insertCoin(Coin.TEN);
-			vendingMachineService.insertCoin(Coin.TEN);
-			vendingMachineService.collectItemAndChange();
+			vendingMachineDaoImpl.selectItemAndGetPrice(Item.COFFEE);
+			vendingMachineDaoImpl.insertCoin(Coin.TEN);
+			vendingMachineDaoImpl.insertCoin(Coin.TEN);
+			when(itemInventory.hasItem(Item.COFFEE)).thenReturn(false);
+			vendingMachineDaoImpl.collectItemAndChange();
 
-			vendingMachineService.selectItemAndGetPrice(Item.BLACKTEA);
-			vendingMachineService.insertCoin(Coin.TEN);
-			vendingMachineService.collectItemAndChange();
 		}
 	}
 

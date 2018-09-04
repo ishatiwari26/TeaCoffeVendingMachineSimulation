@@ -126,7 +126,6 @@ public class ValidateCustomerRequestTest {
 	public void shouldGiveMessageWhenHaveWrongOrder() {
 		when(userInputScanner.getIntValue()).thenReturn(5);
 		validateCustomerRequest.customerRequests();
-
 	}
 
 	@Test
