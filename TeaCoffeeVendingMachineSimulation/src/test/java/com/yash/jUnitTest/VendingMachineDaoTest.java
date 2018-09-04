@@ -102,7 +102,6 @@ public class VendingMachineDaoTest {
 		vendingMachineDaoImpl.selectItemAndGetPrice(Item.COFFEE);
 		vendingMachineDaoImpl.insertCoin(Coin.FIVE);
 		vendingMachineDaoImpl.collectItemAndChange();
-
 	}
 
 	@Test

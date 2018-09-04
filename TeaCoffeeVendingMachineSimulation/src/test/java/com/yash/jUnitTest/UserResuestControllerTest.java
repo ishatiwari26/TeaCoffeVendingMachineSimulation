@@ -13,12 +13,10 @@ import org.mockito.Mock;
 import org.mockito.runners.MockitoJUnitRunner;
 
 import com.yash.actions.ValidateCustomerRequest;
-import com.yash.actions.ValidateOperatorRequest;
 import com.yash.actions.ValidateUserAction;
 import com.yash.controller.UserResuestController;
 import com.yash.enums.Coin;
 import com.yash.enums.Item;
-import com.yash.util.UserInputScanner;
 
 @RunWith(MockitoJUnitRunner.class)
 public class UserResuestControllerTest {
@@ -30,10 +28,7 @@ public class UserResuestControllerTest {
 	private ValidateUserAction userAction;
 	@Mock
 	private ValidateCustomerRequest validateCustomerRequest;
-	@Mock
-	private ValidateOperatorRequest validateOperatorRequest;
-	@Mock
-	private UserInputScanner userInputScanner;
+
 	@Rule
 	public ExpectedException exception = ExpectedException.none();
 
